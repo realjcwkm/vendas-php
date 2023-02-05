@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('nome', 30);
             $table->integer('quantidade');
             $table->decimal('valor_unitario', 5, 2);	
-            $table->timestamps();
+            $table->timestamp('created_at')->nullable()->useCurrent();
+            $table->timestamp('updated_at')->nullable()->useCurrentOnUpdate();
         });
     }
 
