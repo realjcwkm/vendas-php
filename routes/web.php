@@ -16,3 +16,13 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->get('/clientes', 'ClienteController@getAllClientes');
+$router->post('/cliente', 'ClienteController@postCliente');
+
+$router->get('/produtos', 'ProdutoController@getAllProdutos');
+$router->post('/produto', 'ProdutoController@postProduto');
+
+$router->get('/vendas', 'VendaController@getAllVendas');
+$router->post('/venda', 'VendaController@postVenda');
+$router->delete('/venda/{id}', 'VendaController@deleteVenda');
